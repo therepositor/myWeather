@@ -1,38 +1,214 @@
-.App {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&family=Zen+Kurenaido&display=swap');
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Jost', 'Zen Kurenaido', sans-serif;
+  font-size: 16px;
+  min-width: 320px;
+  position: relative;
+  background-image: url(../public/images/tom-barrett-hgGplX3PFBg-unsplash.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
   min-height: 100vh;
+  color: #fff;
+}
+* {
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+}
+.App {
+  padding: 0 1rem;
   display: flex;
   flex-direction: column;
+  width: 100%;
+}
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 0;
+}
+header .form-container {
+  flex-direction: row;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding-left: 2rem;
 }
-
-.App-link {
-  color: #61dafb;
+header .city-icon-container {
+  display: flex;
 }
+header .city-icon-container a {
+  cursor: pointer;
+  color: #fff;
+  text-decoration: none;
+  
+}
+header .city-icon-container a .faCity {
+  font-size: 1.1rem;
+}
+header .form-container .input-container, header .form-container .submit-container {
+  display: flex;
+}
+header .form-container .input-container input[type='search'] {
+  background-color: #fff;
+  padding: 0.5rem;
+  border: 0;
+  outline: 0;
+  font-family: inherit;
+  font-size: 1.2rem;
+  border-radius: 25px;
+  width: 90%;
+}
+header .form-container .submit-container input[type='submit'] {
+  background-color: inherit;
+  color: #fff;
+  font-size: 1.1rem;
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+  font-family: inherit;
+}
+.forcast-container  {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.forcast-container h1 {
+  display: flex;
+  justify-content: center;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+}
+.forcast-container ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.forcast-container ul li {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  padding: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  border-radius: 25px;
+  box-shadow: 2px 1px 1px 1px rgba(256, 256, 256, 0.1);
+  margin: 1rem 0.5rem;
+  position: relative;
+}
+.forcast-container ul li:hover  {
+  border: 2px solid #fff;
+  
+}
+.forcast-container ul li sub {
+  position: absolute;
+  top: 36%;
+  left: 71%;
+}
+.forcast-container ul li sup {
+  position: absolute;
+  top: 18%;
+  left: 71%;
+}
+.forcast-container ul .today-weather {
+  margin: 2rem 3rem 4rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+@media only screen and (min-width: 768px) {
+  .App {
+    padding: 0 2rem;
   }
-  to {
-    transform: rotate(360deg);
+  header {
+    padding: 2rem 0;
+    justify-content: center;
+  }
+  header .city-icon-container a .faCity {
+    font-size: 1.3rem;
+  }
+  .forcast-container ul li {
+    width: 270px;
+    height: 200px;
+    margin: 1rem 2rem;
+  }
+  .forcast-container ul .today-weather sub {
+    position: absolute;
+    top: 43%;
+    left: 60%;
+  }
+  .forcast-container ul li sub {
+    position: absolute;
+    top: 41%;
+    left: 62%;
+  }
+  .forcast-container ul .today-weather sup {
+    position: absolute;
+    top: 30%;
+    left: 60%;
+  }
+  .forcast-container ul li sup {
+    position: absolute;
+    top: 24%;
+    left: 62%;
+  }
+  .forcast-container ul .today-weather {
+    margin: 2rem 6rem 4rem;
+    width: 350px;
+    height: 250px;
+  }
+}
+@media only screen and (min-width: 950px) {
+  .App {
+    padding: 0 4rem;
+  }
+  header {
+    padding: 2rem 0;
+    justify-content: center;
+  }
+  header .city-icon-container a .faCity {
+    font-size: 1.5rem;
+  }
+  .forcast-container ul li {
+    width: 300px;
+    height: 200px;
+    margin: 1rem 2rem;
+  }
+  .forcast-container ul li sub {
+    position: absolute;
+    top: 53%;
+    left: 63%;
+  }
+  .forcast-container ul li sup {
+    position: absolute;
+    top: 38%;
+    left: 63%;
+  }
+  .forcast-container ul .today-weather {
+    margin: 2rem 30rem 6rem;
+    width: 350px;
+    height: 250px;
+  }
+  .forcast-container ul li sup {
+    position: absolute;
+    top: 24%;
+    left: 62%;
+  }
+  .forcast-container ul li sub {
+    position: absolute;
+    top: 41%;
+    left: 62%;
   }
 }

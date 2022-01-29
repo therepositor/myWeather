@@ -1,25 +1,42 @@
-import logo from './logo.svg';
 import './App.css';
+import Index from './Routes/Index';
+import  { useState } from 'react'
 
 function App() {
+  const [searchInput, setSearchInput] = useState('');
+  const [forecast, setForecast] = useState({});
+  const apiKey = process.env.REACT_APP_APIKEY;
+  const APIURL = `https://api.openweathermap.org/data/2.5/forecast?q=${searchInput}&appid=${apiKey}`;
+  
+  const handleChange = (e) => {
+    e.preventDefault();
+    
+    setSearchInput(e.target.value);
+  }
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    fetchData();
+    
+  }
+  const fetchData = () => {
+    var requestOptions = {
+      origin: 'cors'
+    };
+    fetch(APIURL,requestOptions)
+    .then(response => response.json())
+    .then(result => result = setForecast(result))
+    .catch(error => console.log('error', error))  
+
+ } 
+  console.log(forecast);
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Index searchInput={searchInput} onClick={handleSubmit} onChange={handleChange} forecasts={forecast}/>
     </div>
+    
   );
 }
 
-export default App;
+export default App
