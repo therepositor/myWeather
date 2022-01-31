@@ -94,27 +94,38 @@ header .form-container .submit-container input[type='submit'] {
 }
 .forcast-container ul li {
   list-style-type: none;
+}
+.forcast-container ul .other-days-container .other-days {
   display: flex;
   flex-direction: column;
   width: 150px;
-  padding: 0.5rem;
+  padding: 0.2rem 0;
   justify-content: center;
   align-items: center;
-  height: 150px;
+  height: 170px;
   border-radius: 25px;
-  
   margin: 1rem 0.5rem;
   position: relative;
   border: 2px solid #fff;
 }
-.forcast-container ul li:hover  {
+.forcast-container ul .other-days-container .other-days .img-container, .forcast-container ul .today-weather-container .today-weather .img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.forcast-container ul .other-days-container .other-days .img-container img, .forcast-container ul .today-weather-container .today-weather .img-container img {
+  height: 40px;
+}
+.forcast-container ul .today-weather-container .today-weather:hover,
+.forcast-container ul .other-days-container .other-days:hover  {
   box-shadow: 2px 1px 1px 1px rgba(256, 256, 256, 0.1);
   opacity: 0.5;
   
 }
 .forcast-container ul li sub {
   position: absolute;
-  top: 36%;
+  top: 37%;
   left: 71%;
 }
 .forcast-container ul li sup {
@@ -122,13 +133,30 @@ header .form-container .submit-container input[type='submit'] {
   top: 18%;
   left: 71%;
 }
-.forcast-container ul .today-weather {
+.forcast-container ul .today-weather-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 2rem 3rem 4rem;
+}
+.form-container ul .other-days-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.forcast-container ul .today-weather-container .today-weather {
   display: flex;
   flex-direction: column;
   position: relative;
   width: 150px;
-  height: 150px;
+  height: 170px;
+  border: 2px solid #fff;
+  border-radius: 25px;
+  justify-content: center;
+  align-items: center;
+  padding: 0.2rem;
 }
 @media only screen and (min-width: 768px) {
   .App {
@@ -141,7 +169,7 @@ header .form-container .submit-container input[type='submit'] {
   header .city-icon-container a .faCity {
     font-size: 1.3rem;
   }
-  .forcast-container ul li {
+  .forcast-container ul .other-days-container .other-days {
     width: 270px;
     height: 200px;
     margin: 1rem 2rem;
@@ -166,7 +194,7 @@ header .form-container .submit-container input[type='submit'] {
     top: 24%;
     left: 62%;
   }
-  .forcast-container ul .today-weather {
+  .forcast-container ul .today-weather-container .today-weather {
     margin: 2rem 6rem 4rem;
     width: 350px;
     height: 250px;
@@ -183,7 +211,7 @@ header .form-container .submit-container input[type='submit'] {
   header .city-icon-container a .faCity {
     font-size: 1.5rem;
   }
-  .forcast-container ul li {
+  .forcast-container ul .other-days-container .other-days {
     width: 300px;
     height: 200px;
     margin: 1rem 2rem;
@@ -198,7 +226,7 @@ header .form-container .submit-container input[type='submit'] {
     top: 38%;
     left: 63%;
   }
-  .forcast-container ul .today-weather {
+  .forcast-container ul .today-weather-container .today-weather {
     margin: 2rem 30rem 6rem;
     width: 350px;
     height: 250px;

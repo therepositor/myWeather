@@ -22,15 +22,21 @@ const DisplayForcast = ({forecasts,searchInput,error}) => {
             {forecasts?.list?.length  && forecasts.list.map((forecast,index) =>  {
                 return (index === 0 || index % 7 === 0) && index !== 1 &&  
                 
-                    <li key={uuidv4()} className={index === 0 ? 'day today-weather ' : 'day other-days'}>
-                       <p>{new Date(forecast?.dt * 1000).toDateString() }</p>
-                        <h1>{convertKelvinToCelsuis(forecast?.main?.temp)}&#8451;</h1>
-                        <sub>{convertKelvinToCelsuis(forecast?.main?.temp_min)}&#8451;</sub>
-                        <sup>{convertKelvinToCelsuis(forecast?.main?.temp_max)}&#8451;</sup>
+                  <li key={uuidv4()} className={index === 0 ? 'day today-weather-container ' : 'day other-days-container'}>
+                    <div className={index === 0 ? 'day today-weather ' : 'day other-days'}>
+                      <p>{new Date(forecast?.dt * 1000).toDateString() }</p>
+                      <h1>{convertKelvinToCelsuis(forecast?.main?.temp)}&#8451;</h1>
+                      <sub>{convertKelvinToCelsuis(forecast?.main?.temp_min)}&#8451;</sub>
+                      <sup>{convertKelvinToCelsuis(forecast?.main?.temp_max)}&#8451;</sup>
+                      <div className='image-container'>
                         <img src={'https://openweathermap.org/img/w/'+forecast?.weather[0]?.icon+'.png'} alt={forecast?.weather[0]?.main} />
-                        <p>{forecast?.weather[0]?.description}</p>
+                      </div>
+                     
+                      <p>{forecast?.weather[0]?.description}</p>
+                    </div>
+                       
                         
-                    </li>      
+                  </li>      
                }) 
             }
           </ul>
