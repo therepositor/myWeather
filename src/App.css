@@ -195,7 +195,6 @@ header .form-container .submit-container input[type='submit'] {
     left: 62%;
   }
   .forcast-container ul .today-weather-container .today-weather {
-    margin: 2rem 6rem 4rem;
     width: 350px;
     height: 250px;
   }
@@ -227,7 +226,6 @@ header .form-container .submit-container input[type='submit'] {
     left: 63%;
   }
   .forcast-container ul .today-weather-container .today-weather {
-    margin: 2rem 30rem 6rem;
     width: 350px;
     height: 250px;
   }
