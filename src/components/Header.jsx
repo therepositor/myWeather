@@ -5,11 +5,11 @@ import { faCity } from '@fortawesome/free-solid-svg-icons'
 const Header = ({onClick, onChange}) => {
   return (
     <header>
-      <div className='city-icon-container'>
+      {/* <div className='city-icon-container'>
           <Link to='/pinned-city'>
             <FontAwesomeIcon className='faCity' icon={faCity} />
           </Link>
-      </div>
+      </div> */}
       <form className='form-container' action="">
           <div className="input-container">
               <input type="search" name="search" id="search" placeholder='Enter a city' onChange={onChange}/>

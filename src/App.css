@@ -28,7 +28,7 @@ body {
 header {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   width: 100%;
   padding: 1rem 0;
@@ -38,7 +38,6 @@ header .form-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-left: 2rem;
 }
 header .city-icon-container {
   display: flex;
@@ -63,7 +62,7 @@ header .form-container .input-container input[type='search'] {
   font-family: inherit;
   font-size: 1.2rem;
   border-radius: 25px;
-  width: 90%;
+  margin-right: 0.5rem;
 }
 header .form-container .submit-container input[type='submit'] {
   background-color: inherit;
